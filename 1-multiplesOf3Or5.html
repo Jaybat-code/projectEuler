@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Project Euler Problem</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #7b9c9e;
+            margin: 0;
+            padding: 20px;
+        }
+        .container {
+            max-width: 800px;
+            margin: auto;
+            background: #fff;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+        }
+        h1 {
+            color: #333;
+        }
+        .problem {
+            margin-bottom: 20px;
+        }
+        .input-group {
+            margin-bottom: 10px;
+        }
+        .input-group label {
+            display: block;
+            margin-bottom: 5px;
+        }
+        .input-group input {
+            width: 100%;
+            padding: 8px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+        }
+        .output {
+            margin-top: 20px;
+            padding: 10px;
+            background: #e7f3fe;
+            border: 1px solid #b3d4fc;
+            border-radius: 4px;
+        }
+        .button {
+            padding: 10px 15px;
+            background-color: #5cb85c;
+            color: white;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            font-size: 16px;
+            margin-right: 10px;
+        }
+        .button:hover {
+            background-color: #4cae4c;
+        }
+        .footer {
+            margin-top: 20px;
+            display: flex;
+            justify-content: space-between;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Project Euler Problem #1: multiplesOf3Or5</h1>
+        <div class="problem">
+            <p>
+
+                If we list all the natural numbers below 10 that are multiples of 3 or 5, we get 3, 5, 6 and 9. The sum of these multiples is 23.
+                
+                Find the sum of all the multiples of 3 or 5 below the provided parameter value number.
+                </p>
+        </div>
+        <div class="input-group">
+            <label for="input">Input:</label>
+            <input type="text" id="input" placeholder="Enter your input here">
+        </div>
+        <button class="button" onclick="solveProblem()">Solve</button>
+        <div class="output" id="output">
+            <!-- Output will be displayed here -->
+        </div>
+
+        <div class="footer">
+            <a href="/0-boilerPlate.html"><button class="button">Previous</button></a>
+            <a href="/2-fiboEvenSum.html"><button class="button">Next</button></a>
+        </div>
+    </div>
+
+    <script>
+        function solveProblem() {
+        const input = document.getElementById("input").value;
+        const result = document.getElementById("output");
+            function multiplesOf3Or5(number){
+                let total = 0;
+                for(let i = 0;i<number;i++){
+                    if(i%3===0){
+                        total+=i;
+                    }else if(i%5===0){
+                        total+=i
+                    }
+                }
+                return total;
+            }
+            result.innerHTML=`The Input Was ${input}... And The Output Was ${multiplesOf3Or5(input)}`
+        }
+    </script>
+</body>
+</html>
